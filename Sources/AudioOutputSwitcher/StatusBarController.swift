@@ -50,7 +50,7 @@ final class StatusBarController {
 
     private func configureStatusItemIcon() {
         guard let button = statusItem.button else { return }
-        let image = NSImage(systemSymbolName: "hifispeaker.fill", accessibilityDescription: "Audio Output")
+        let image = NSImage(systemSymbolName: "hifispeaker", accessibilityDescription: "Audio Output")
         image?.isTemplate = true
         button.image = image
     }
