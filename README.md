@@ -83,20 +83,9 @@ so it always launches the newly built binary.
 
 ## No volume control on the Dell S2725QC
 
-The Dell's USB-C audio device doesn't expose a volume (or mute) property to
-CoreAudio at all — confirmed with `AudioObjectHasProperty` against
-`kAudioDevicePropertyVolumeScalar` on both the master element and per-channel
-elements, all `false`. This means macOS's volume keys, the menu bar slider,
-and any app (this one included) have nothing to adjust: there's no
-software-level fix, since the HAL property simply isn't there.
-
-This isn't a bug in AudioOutputSwitcher — it's how the monitor's audio
-device reports itself. Control the volume from the monitor's own on-screen
-menu/buttons instead (that's what worked in practice). A workaround exists
-if you want in-Mac control anyway:
-[SoundSource](https://rogueamoeba.com/soundsource/) (paid, Rogue Amoeba) can
-add a software volume layer on top of devices that lack hardware volume
-control, by inserting itself as an aggregate device.
+The Dell doesn't expose volume control to macOS, so the volume keys and this
+app can't adjust it. Control the volume from the monitor's own controls
+instead.
 
 ## Customizing the Dell device match
 
